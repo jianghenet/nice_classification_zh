@@ -10,8 +10,10 @@ module NiceZh
   ]
   datas = {}
 
+  data_dir =  File.expand_path('../../data', __FILE__)
+
   file_names.each do |file_name|
-    file_path = "./data/#{file_name}.yml"
+    file_path = "#{data_dir}/#{file_name}.yml"
     m = YAML.load_file(file_path)
     datas.merge!(m)
   end
